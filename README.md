@@ -1,13 +1,43 @@
 # SquashCommits 
 ## Squash the Last X Commits ##
 
+first check your log
+```git log```
+
 git rebase -i HEAD~[X]
 
 ```git rebase -i HEAD~4```
 
+OR
+open rebase window using SHA value
+
+```git rebase -i <first 7 alphanumeric of SHA>```
+
 Git will start the system default editor (the Vim editor)
 
-As we can see in the screenshot above, all four commits we want to squash are listed in the editor with the pick command.
-There's a detailed guideline on how to control each commit and commit message in the commented lines that follow.
-For example, we can change the pick command of commits into s or squash to squash them:
-￼
+Follow the instruction given in rebase interactive window and make the changes accordingly.
+
+**TO SAVE**
+press esc key
+
+type :x!
+
+press return key
+
+write your final commit message
+
+press esc again
+
+type :wq! or :x!
+
+press return key
+
+**PUSH (if all these extra commits were pushed in GitHub repo also)
+you have to push changes forcefully.
+**
+
+```git push -f origin master```
+
+replace ‘origin’ with your remote name and ‘master’ with your branch name.
+
+Squash all your commits
